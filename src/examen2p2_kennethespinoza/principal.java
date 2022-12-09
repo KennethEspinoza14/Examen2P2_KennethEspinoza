@@ -16,6 +16,7 @@ public class principal extends javax.swing.JFrame {
     public principal() { 
         initComponents();
         mapa(jt_mapa);
+        System.out.println("Hola james");
     }
 
     public void aparecer_secreto(){
@@ -143,6 +144,7 @@ public class principal extends javax.swing.JFrame {
          admin_bin a = new admin_bin ("./bitacora.cbm");
          
          a.escribirArchivo(jt_mapa);
+         
          
     }//GEN-LAST:event_GuardarActionPerformed
 
