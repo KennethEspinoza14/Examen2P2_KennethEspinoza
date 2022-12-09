@@ -9,13 +9,6 @@ package examen2p2_kennethespinoza;
  *
  * @author Kenneth
  */
-public class Examen2P2_KennethEspinoza {
-
-    /**
-     * @param args the command line arguments
-     */
-    public static void main(String[] args) {
-        // TODO code application logic here
-    }
+public class Hilo {
     
 }
