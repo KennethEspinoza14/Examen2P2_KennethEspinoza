@@ -7,13 +7,14 @@ import java.io.FileInputStream;
 import java.io.FileOutputStream;
 import java.io.ObjectInputStream;
 import java.io.ObjectOutputStream;
+import java.io.Serializable;
 import java.util.ArrayList;
 
 /**
  *
  * @author Kenneth
  */
-public class admin_bin {
+public class admin_bin implements Serializable{
     
     ArrayList<banana_suprema> banana = new ArrayList();
     private File archivo = null;

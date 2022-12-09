@@ -2,6 +2,7 @@
 package examen2p2_kennethespinoza;
 
 import java.util.Random;
+import javax.swing.JTextArea;
 
 /**
  *
@@ -12,32 +13,31 @@ public class principal extends javax.swing.JFrame {
     /**
      * Creates new form principal
      */
-    public principal() {
+    public principal() { 
         initComponents();
+        mapa(jt_mapa);
     }
 
-    public static void tablero(String m [][]){
-        
-        String [][] matriz = new String[30][30];
-        
-        String x = "X";
-      
-        for (int i = 0; i < matriz.length; i++) {
-            for (int j = 0; j < matriz[i].length; j++) {
-                matriz[i][j] = "x";
-            }
-        }
-
+   public void mapa(JTextArea mapa) {
        
-                      
-        for (int i = 0; i < matriz.length; i++) {
-            for (int j = 0; j < matriz[i].length; j++) {
-                System.out.print(matriz[i][j]);
-            }
-            System.out.println();
+        String matriz = "";
+        for (int i = 0; i < 33; i++) {
+            matriz += "*";
         }
-                 
-    }// fin tablero
+        matriz += "\n";
+        for (int i = 0; i < 13; i++) {
+            matriz += "*";
+            for (int j = 0; j < 32; j++) {
+                matriz += " ";
+            }
+            matriz += "*";
+            matriz += "\n";
+        }
+        for (int i = 0; i < 33; i++) {
+            matriz += "*";
+        }
+        mapa.setText(matriz);       
+    }
     
     /**
      * This method is called from within the constructor to initialize the form.
@@ -49,19 +49,25 @@ public class principal extends javax.swing.JFrame {
     private void initComponents() {
 
         jScrollPane1 = new javax.swing.JScrollPane();
-        jTextArea1 = new javax.swing.JTextArea();
+        jt_mapa = new javax.swing.JTextArea();
         Guardar = new javax.swing.JButton();
         Cargar = new javax.swing.JButton();
         Comenzar = new javax.swing.JButton();
-        jTextField1 = new javax.swing.JTextField();
+        tf_movimiento = new javax.swing.JTextField();
 
         setDefaultCloseOperation(javax.swing.WindowConstants.EXIT_ON_CLOSE);
 
-        jTextArea1.setColumns(20);
-        jTextArea1.setRows(5);
-        jScrollPane1.setViewportView(jTextArea1);
+        jt_mapa.setColumns(20);
+        jt_mapa.setFont(new java.awt.Font("Consolas", 0, 12)); // NOI18N
+        jt_mapa.setRows(5);
+        jScrollPane1.setViewportView(jt_mapa);
 
         Guardar.setText("Guardar");
+        Guardar.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                GuardarActionPerformed(evt);
+            }
+        });
 
         Cargar.setText("Cargar");
 
@@ -81,7 +87,7 @@ public class principal extends javax.swing.JFrame {
                         .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, 52, Short.MAX_VALUE)
                         .addComponent(Comenzar))
                     .addComponent(jScrollPane1)
-                    .addComponent(jTextField1))
+                    .addComponent(tf_movimiento))
                 .addContainerGap(40, Short.MAX_VALUE))
         );
         layout.setVerticalGroup(
@@ -90,7 +96,7 @@ public class principal extends javax.swing.JFrame {
                 .addGap(15, 15, 15)
                 .addComponent(jScrollPane1, javax.swing.GroupLayout.PREFERRED_SIZE, 235, javax.swing.GroupLayout.PREFERRED_SIZE)
                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, 30, Short.MAX_VALUE)
-                .addComponent(jTextField1, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
+                .addComponent(tf_movimiento, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
                 .addGap(18, 18, 18)
                 .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
                     .addComponent(Guardar)
@@ -101,6 +107,12 @@ public class principal extends javax.swing.JFrame {
 
         pack();
     }// </editor-fold>//GEN-END:initComponents
+
+    private void GuardarActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_GuardarActionPerformed
+
+            
+
+    }//GEN-LAST:event_GuardarActionPerformed
 
     /**
      * @param args the command line arguments
@@ -144,8 +156,8 @@ public class principal extends javax.swing.JFrame {
     private javax.swing.JButton Comenzar;
     private javax.swing.JButton Guardar;
     private javax.swing.JScrollPane jScrollPane1;
-    private javax.swing.JTextArea jTextArea1;
-    private javax.swing.JTextField jTextField1;
+    private javax.swing.JTextArea jt_mapa;
+    private javax.swing.JTextField tf_movimiento;
     // End of variables declaration//GEN-END:variables
 
     

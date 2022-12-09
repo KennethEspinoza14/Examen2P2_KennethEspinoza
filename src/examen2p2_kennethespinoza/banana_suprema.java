@@ -7,7 +7,7 @@ import java.util.ArrayList;
  *
  * @author Kenneth
  */
-public class banana_suprema {
+public class banana_suprema{
     
     private ArrayList <jugadores> jugadores_comidos = new ArrayList();
     private jugadores jugador;
@@ -31,7 +31,5 @@ public class banana_suprema {
     public void setJugador(jugadores jugador) {
         this.jugador = jugador;
     }
-
-    
-    
+  
 }

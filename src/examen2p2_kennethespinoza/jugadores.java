@@ -45,8 +45,8 @@ public class jugadores extends Thread{
    
    public jugadores (){
        
-       this.posx = 1 + new Random().nextInt(30);
-       this.posx = 1 + new Random().nextInt(30);
+       this.posx = 1 + new Random().nextInt(20);
+       this.posx = 1 + new Random().nextInt(20);
    }
    
    @Override
@@ -56,6 +56,5 @@ public class jugadores extends Thread{
        }
        
    }
-   
-   
+  
 }
