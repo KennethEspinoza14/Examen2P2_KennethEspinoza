@@ -110,7 +110,9 @@ public class principal extends javax.swing.JFrame {
 
     private void GuardarActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_GuardarActionPerformed
 
-            
+         admin_bin a = new admin_bin ("./bitacora.cbm");
+         
+         a.escribirArchivo(jt_mapa);
 
     }//GEN-LAST:event_GuardarActionPerformed
 

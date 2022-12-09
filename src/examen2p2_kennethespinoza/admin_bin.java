@@ -9,6 +9,8 @@ import java.io.ObjectInputStream;
 import java.io.ObjectOutputStream;
 import java.io.Serializable;
 import java.util.ArrayList;
+import javax.swing.JTextArea;
+import javax.swing.JTree;
 
 /**
  *
@@ -16,14 +18,27 @@ import java.util.ArrayList;
  */
 public class admin_bin implements Serializable{
     
+    private javax.swing.JTextArea mapa;
     ArrayList<banana_suprema> banana = new ArrayList();
     private File archivo = null;
 
     public admin_bin() {
     }
+    
+    public admin_bin(JTextArea mapa) {
+        this.mapa = mapa;
+    }
 
     public admin_bin(String path) {
         archivo = new File(path);
+    }
+
+    public JTextArea getMapa() {
+        return mapa;
+    }
+
+    public void setMapa(JTextArea mapa) {
+        this.mapa = mapa;
     }
 
     public ArrayList<banana_suprema> getBanana() {
@@ -53,9 +68,10 @@ public class admin_bin implements Serializable{
 
     public void cargarArchivo() {
 
+        javax.swing.JTextArea temp;
+       
         try {
-            banana = new ArrayList();
-            banana_suprema temp;
+
             if (archivo.exists()) {
                 
                 System.out.println("Archivo encontrado");
@@ -64,8 +80,8 @@ public class admin_bin implements Serializable{
                 ObjectInputStream objeto
                         = new ObjectInputStream(entrada);
                 try {
-                    while ((temp = (banana_suprema) objeto.readObject()) != null) {
-                        banana.add(temp);
+                    while ((temp = ( javax.swing.JTextArea) objeto.readObject()) != null) {
+                        mapa = temp;
                     }
                 } catch (EOFException e) {
                     //encontro el final del archivo

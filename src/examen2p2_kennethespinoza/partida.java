@@ -31,7 +31,7 @@ public class partida extends Thread{
     @Override
     public void run (){
         
-        
+
         
     }
 }
