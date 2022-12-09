@@ -18,6 +18,15 @@ public class principal extends javax.swing.JFrame {
         mapa(jt_mapa);
     }
 
+    public void aparecer_secreto(){
+        
+        secreto.setModal(true);
+        secreto.pack();
+        secreto.setLocationRelativeTo(this);
+        secreto.setVisible(true);
+  
+    }
+    
    public void mapa(JTextArea mapa) {
        
         String matriz = "";
@@ -48,12 +57,20 @@ public class principal extends javax.swing.JFrame {
     // <editor-fold defaultstate="collapsed" desc="Generated Code">//GEN-BEGIN:initComponents
     private void initComponents() {
 
+        secreto = new javax.swing.JDialog();
+        jLabel1 = new javax.swing.JLabel();
         jScrollPane1 = new javax.swing.JScrollPane();
         jt_mapa = new javax.swing.JTextArea();
         Guardar = new javax.swing.JButton();
         Cargar = new javax.swing.JButton();
         Comenzar = new javax.swing.JButton();
         tf_movimiento = new javax.swing.JTextField();
+        jButton1 = new javax.swing.JButton();
+
+        secreto.getContentPane().setLayout(new org.netbeans.lib.awtextra.AbsoluteLayout());
+
+        jLabel1.setIcon(new javax.swing.ImageIcon(getClass().getResource("/imagenes_del_secreto/regalo.jpg"))); // NOI18N
+        secreto.getContentPane().add(jLabel1, new org.netbeans.lib.awtextra.AbsoluteConstraints(-32768, -32768, 37, 16));
 
         setDefaultCloseOperation(javax.swing.WindowConstants.EXIT_ON_CLOSE);
 
@@ -73,29 +90,42 @@ public class principal extends javax.swing.JFrame {
 
         Comenzar.setText("Comenzar");
 
+        jButton1.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                jButton1ActionPerformed(evt);
+            }
+        });
+
         javax.swing.GroupLayout layout = new javax.swing.GroupLayout(getContentPane());
         getContentPane().setLayout(layout);
         layout.setHorizontalGroup(
             layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
             .addGroup(layout.createSequentialGroup()
-                .addGap(36, 36, 36)
-                .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING, false)
+                .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
                     .addGroup(layout.createSequentialGroup()
-                        .addComponent(Guardar)
-                        .addGap(44, 44, 44)
-                        .addComponent(Cargar)
-                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, 52, Short.MAX_VALUE)
-                        .addComponent(Comenzar))
-                    .addComponent(jScrollPane1)
-                    .addComponent(tf_movimiento))
+                        .addGap(36, 36, 36)
+                        .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING, false)
+                            .addGroup(layout.createSequentialGroup()
+                                .addComponent(Guardar)
+                                .addGap(44, 44, 44)
+                                .addComponent(Cargar)
+                                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, 52, Short.MAX_VALUE)
+                                .addComponent(Comenzar))
+                            .addComponent(jScrollPane1)
+                            .addComponent(tf_movimiento)))
+                    .addGroup(layout.createSequentialGroup()
+                        .addGap(17, 17, 17)
+                        .addComponent(jButton1, javax.swing.GroupLayout.PREFERRED_SIZE, 15, javax.swing.GroupLayout.PREFERRED_SIZE)))
                 .addContainerGap(40, Short.MAX_VALUE))
         );
         layout.setVerticalGroup(
             layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
             .addGroup(layout.createSequentialGroup()
-                .addGap(15, 15, 15)
+                .addContainerGap()
+                .addComponent(jButton1, javax.swing.GroupLayout.PREFERRED_SIZE, 16, javax.swing.GroupLayout.PREFERRED_SIZE)
+                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
                 .addComponent(jScrollPane1, javax.swing.GroupLayout.PREFERRED_SIZE, 235, javax.swing.GroupLayout.PREFERRED_SIZE)
-                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, 30, Short.MAX_VALUE)
+                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, 11, Short.MAX_VALUE)
                 .addComponent(tf_movimiento, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
                 .addGap(18, 18, 18)
                 .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
@@ -113,8 +143,13 @@ public class principal extends javax.swing.JFrame {
          admin_bin a = new admin_bin ("./bitacora.cbm");
          
          a.escribirArchivo(jt_mapa);
-
+         
     }//GEN-LAST:event_GuardarActionPerformed
+
+    private void jButton1ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButton1ActionPerformed
+
+        aparecer_secreto();
+    }//GEN-LAST:event_jButton1ActionPerformed
 
     /**
      * @param args the command line arguments
@@ -157,8 +192,11 @@ public class principal extends javax.swing.JFrame {
     private javax.swing.JButton Cargar;
     private javax.swing.JButton Comenzar;
     private javax.swing.JButton Guardar;
+    private javax.swing.JButton jButton1;
+    private javax.swing.JLabel jLabel1;
     private javax.swing.JScrollPane jScrollPane1;
     private javax.swing.JTextArea jt_mapa;
+    private javax.swing.JDialog secreto;
     private javax.swing.JTextField tf_movimiento;
     // End of variables declaration//GEN-END:variables
 

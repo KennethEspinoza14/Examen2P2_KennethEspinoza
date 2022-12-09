@@ -94,7 +94,7 @@ public class admin_bin implements Serializable{
         }
     }
 
-    public void escribirArchivo() {
+    public void escribirArchivo( javax.swing.JTextArea mapa) {
         FileOutputStream fw = null;
         ObjectOutputStream bw = null;
 
@@ -102,10 +102,8 @@ public class admin_bin implements Serializable{
             fw = new FileOutputStream(archivo);
             bw = new ObjectOutputStream(fw);
 
-            for (banana_suprema t : banana) {
-                bw.writeObject(t);
-            }
-             
+            bw.writeObject(mapa);
+            
             bw.flush();
         } catch (Exception ex) {
         } finally {
