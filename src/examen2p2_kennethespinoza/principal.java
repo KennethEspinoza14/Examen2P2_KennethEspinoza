@@ -68,10 +68,21 @@ public class principal extends javax.swing.JFrame {
         tf_movimiento = new javax.swing.JTextField();
         jButton1 = new javax.swing.JButton();
 
-        secreto.getContentPane().setLayout(new org.netbeans.lib.awtextra.AbsoluteLayout());
-
         jLabel1.setIcon(new javax.swing.ImageIcon(getClass().getResource("/imagenes_del_secreto/regalo.jpg"))); // NOI18N
-        secreto.getContentPane().add(jLabel1, new org.netbeans.lib.awtextra.AbsoluteConstraints(-32768, -32768, 37, 16));
+
+        javax.swing.GroupLayout secretoLayout = new javax.swing.GroupLayout(secreto.getContentPane());
+        secreto.getContentPane().setLayout(secretoLayout);
+        secretoLayout.setHorizontalGroup(
+            secretoLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+            .addGroup(secretoLayout.createSequentialGroup()
+                .addGap(60, 60, 60)
+                .addComponent(jLabel1, javax.swing.GroupLayout.PREFERRED_SIZE, 281, javax.swing.GroupLayout.PREFERRED_SIZE)
+                .addContainerGap(59, Short.MAX_VALUE))
+        );
+        secretoLayout.setVerticalGroup(
+            secretoLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+            .addComponent(jLabel1, javax.swing.GroupLayout.DEFAULT_SIZE, 300, Short.MAX_VALUE)
+        );
 
         setDefaultCloseOperation(javax.swing.WindowConstants.EXIT_ON_CLOSE);
 
